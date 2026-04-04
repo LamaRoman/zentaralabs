@@ -15,6 +15,7 @@ export default function Home() {
           <div className="hidden md:flex items-center gap-8">
             <a href="#products" className="text-sm text-gray-600 hover:text-primary transition-colors">Products</a>
             <a href="#about" className="text-sm text-gray-600 hover:text-primary transition-colors">About</a>
+            <a href="#team" className="text-sm text-gray-600 hover:text-primary transition-colors">Team</a>
             <a href="#contact" className="text-sm text-gray-600 hover:text-primary transition-colors">Contact</a>
           </div>
           <a href="#contact" className="btn-primary text-sm px-4 py-2">Get in Touch</a>
@@ -170,8 +171,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Team */}
+      <section id="team" className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4 tracking-wide uppercase">Our Team</span>
+            <h2 className="text-4xl font-bold text-primary mb-4">The People Behind Zentara</h2>
+            <p className="text-gray-600 max-w-xl mx-auto text-lg">Building software that makes a difference for Nepali businesses.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-2xl mx-auto">
+            <div className="card p-8 text-center">
+              <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-5">
+                <span className="text-white font-bold text-2xl">RL</span>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-1">Roman Lama</h3>
+              <p className="text-accent font-medium text-sm mb-3">Founder & CEO</p>
+              <p className="text-gray-500 text-sm leading-relaxed">Leading the vision and strategy behind Zentara Labs and its products.</p>
+            </div>
+            <div className="card p-8 text-center">
+              <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-5">
+                <span className="text-white font-bold text-2xl">AB</span>
+              </div>
+              <h3 className="text-xl font-bold text-primary mb-1">Anas Basir-U-Din</h3>
+              <p className="text-accent font-medium text-sm mb-3">Co-Founder</p>
+              <p className="text-gray-500 text-sm leading-relaxed">Driving operations and growth to bring our solutions to businesses across Nepal.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
-      <section id="contact" className="py-24 px-6 bg-white">
+      <section id="contact" className="py-24 px-6 bg-surface-alt">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4 tracking-wide uppercase">Contact Us</span>
