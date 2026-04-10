@@ -107,6 +107,78 @@ export default function AttendXpress() {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section id="pricing" className="py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4 tracking-wide uppercase">Pricing</span>
+            <h2 className="text-4xl font-bold text-primary mb-4">Transparent, Per-Employee Pricing</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Pay only for your team size. No contracts, no setup fees, no hardware costs.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
+            {/* Schools - Free */}
+            <div className="card p-10 border-2 border-green-300 bg-green-50/50 flex flex-col">
+              <div className="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full mb-4 w-fit">For Schools</div>
+              <div className="text-4xl font-bold text-green-700 mb-1">FREE</div>
+              <div className="text-sm text-gray-500 mb-6">Included with any School Management plan</div>
+              <ul className="space-y-3 text-sm text-gray-600 flex-1 mb-8">
+                {[
+                  "Mobile attendance for all staff",
+                  "Automatic payroll calculation",
+                  "Payslip generation",
+                  "Leave management",
+                  "Geo-fencing clock-in",
+                  "Attendance reports & export",
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-2">
+                    <svg className="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="/products/school-management" className="block text-center py-2.5 px-4 rounded-lg font-semibold text-sm border border-green-600 text-green-700 hover:bg-green-600 hover:text-white transition-colors">
+                See School Plans →
+              </a>
+            </div>
+            {/* Other Organizations */}
+            <div className="card p-10 border-2 border-primary shadow-xl flex flex-col">
+              <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full mb-4 w-fit">For Businesses & Organizations</div>
+              <div className="mb-1">
+                <span className="text-sm text-gray-500">NPR </span>
+                <span className="text-4xl font-bold text-primary">200</span>
+                <span className="text-gray-400 text-sm"> / employee / month</span>
+              </div>
+              <div className="text-sm text-gray-500 mb-6">Scales with your team. Pay only for active employees.</div>
+              <ul className="space-y-3 text-sm text-gray-600 flex-1 mb-8">
+                {[
+                  "Mobile attendance for all staff",
+                  "Automatic payroll calculation",
+                  "Payslip generation",
+                  "Leave management",
+                  "Geo-fencing clock-in",
+                  "Attendance reports & export",
+                  "Admin & accountant dashboard",
+                  "Dedicated support",
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-2">
+                    <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              <a href="https://wa.me/9779761154213" target="_blank" rel="noopener noreferrer" className="block text-center py-2.5 px-4 rounded-lg font-semibold text-sm bg-primary text-white hover:bg-primary-dark transition-colors">
+                Get Started
+              </a>
+            </div>
+          </div>
+          <div className="text-center mt-8">
+            <p className="text-gray-400 text-sm">Annual billing available with 2 months free. All prices in Nepali Rupees (NPR).</p>
+          </div>
+        </div>
+      </section>
+
       <section className="py-24 px-6 bg-primary">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Modernize Your Attendance?</h2>

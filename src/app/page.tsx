@@ -14,6 +14,7 @@ export default function Home() {
           </div>
           <div className="hidden md:flex items-center gap-8">
             <a href="#products" className="text-sm text-gray-600 hover:text-primary transition-colors">Products</a>
+            <a href="#pricing" className="text-sm text-gray-600 hover:text-primary transition-colors">Pricing</a>
             <a href="#about" className="text-sm text-gray-600 hover:text-primary transition-colors">About</a>
             <a href="#team" className="text-sm text-gray-600 hover:text-primary transition-colors">Team</a>
             <a href="#contact" className="text-sm text-gray-600 hover:text-primary transition-colors">Contact</a>
@@ -46,10 +47,10 @@ export default function Home() {
           </div>
           <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              { value: "2+", label: "Products" },
+              { value: "2", label: "Products" },
               { value: "100%", label: "Made in Nepal" },
               { value: "24/7", label: "Support" },
-              { value: "∞", label: "Scalable" },
+              { value: "NPR 0", label: "Setup Fee" },
             ].map((stat) => (
               <div key={stat.label} className="card p-6 text-center">
                 <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
@@ -121,7 +122,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About */}
+      {/* Pricing Summary */}
+      <section id="pricing" className="py-24 px-6 bg-surface">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4 tracking-wide uppercase">Pricing</span>
+            <h2 className="text-4xl font-bold text-primary mb-4">Honest Pricing. No Surprises.</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">We publish our prices openly because we believe in transparency. What you see is what you pay.</p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* School Management */}
+            <div className="card p-8 border-2 border-primary">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-2xl">🏫</span>
+                <h3 className="text-xl font-bold text-primary">School Management System</h3>
+              </div>
+              <p className="text-gray-500 text-sm mb-5">Two plans per school size — School only, or bundled with HR.</p>
+              <div className="space-y-3 mb-5">
+                {[
+                  { size: "Up to 200 students", school: "NPR 2,500", hr: "NPR 3,500" },
+                  { size: "200 – 500 students", school: "NPR 4,500", hr: "NPR 6,000" },
+                  { size: "500 – 1,000 students", school: "NPR 7,000", hr: "NPR 10,000" },
+                  { size: "1,000+ students", school: "Custom", hr: "Custom" },
+                ].map((tier) => (
+                  <div key={tier.size} className="py-2 border-b border-gray-100 last:border-0">
+                    <div className="text-xs text-gray-400 mb-1">{tier.size}</div>
+                    <div className="flex justify-between">
+                      <span className="text-sm text-gray-600">School only — <span className="font-bold text-gray-800">{tier.school}/mo</span></span>
+                      <span className="text-sm text-primary font-bold">+HR: {tier.hr}/mo</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Link href="/products/school-management#pricing" className="btn-primary w-full justify-center text-sm">See Full Details →</Link>
+            </div>
+            {/* Attend Xpress */}
+            <div className="card p-8 border-2 border-gray-200">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="text-2xl">⏱️</span>
+                <h3 className="text-xl font-bold text-primary">Attend Xpress (HR System)</h3>
+              </div>
+              <p className="text-gray-500 text-sm mb-5">For businesses and organizations outside of schools.</p>
+              <div className="mb-5">
+                <div className="text-center py-8 bg-surface rounded-xl">
+                  <div className="text-sm text-gray-400 mb-1">Per employee, per month</div>
+                  <div>
+                    <span className="text-sm text-gray-500">NPR </span>
+                    <span className="text-5xl font-bold text-primary">200</span>
+                  </div>
+                  <div className="text-xs text-gray-400 mt-2">Scales with your team. Pay only for active employees.</div>
+                </div>
+              </div>
+              <div className="bg-primary/5 border border-primary/20 rounded-lg p-3 mb-5">
+                <p className="text-xs text-primary font-semibold">✓ Attendance · Payroll · Payslips · Leave Management · Geo-fencing</p>
+              </div>
+              <Link href="/products/attend-xpress#pricing" className="btn-outline w-full justify-center text-sm">See Full Details →</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       <section id="about" className="py-24 px-6 bg-surface-alt">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -253,6 +314,7 @@ export default function Home() {
           <div className="flex gap-8 text-sm text-white/70">
             <Link href="/products/attend-xpress" className="hover:text-white transition-colors">Attend Xpress</Link>
             <Link href="/products/school-management" className="hover:text-white transition-colors">School Management</Link>
+            <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
             <a href="#contact" className="hover:text-white transition-colors">Contact</a>
           </div>
           <div className="text-sm text-white/50">© {new Date().getFullYear()} Zentara Labs. All rights reserved.</div>

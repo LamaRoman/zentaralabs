@@ -148,6 +148,130 @@ export default function SchoolManagement() {
         </div>
       </section>
 
+      {/* Pricing */}
+      <section id="pricing" className="py-24 px-6 bg-surface">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4 tracking-wide uppercase">Pricing</span>
+            <h2 className="text-4xl font-bold text-primary mb-4">Simple, Honest Pricing</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+              Choose School only, or bundle with our HR system. Flat monthly price — no per-student fees, no hidden charges.
+            </p>
+          </div>
+
+          {/* Header row */}
+          <div className="hidden md:grid md:grid-cols-3 gap-0 mb-2 px-2">
+            <div />
+            <div className="text-center">
+              <span className="text-sm font-semibold text-gray-500 uppercase tracking-wide">School Plan</span>
+              <p className="text-xs text-gray-400 mt-0.5">School management only</p>
+            </div>
+            <div className="text-center">
+              <span className="text-sm font-semibold text-primary uppercase tracking-wide">School + HR Plan</span>
+              <p className="text-xs text-gray-400 mt-0.5">Includes HR, payroll & payslips</p>
+            </div>
+          </div>
+
+          {/* Tier rows */}
+          <div className="space-y-4">
+            {[
+              { size: "Up to 200 Students", school: "2,500", hr: "3,500", popular: false },
+              { size: "200 – 500 Students", school: "4,500", hr: "6,000", popular: true },
+              { size: "500 – 1,000 Students", school: "7,000", hr: "10,000", popular: false },
+              { size: "1,000+ Students", school: null, hr: null, popular: false },
+            ].map((tier) => (
+              <div key={tier.size} className={`rounded-2xl border-2 overflow-hidden ${tier.popular ? "border-primary shadow-lg" : "border-gray-200 bg-white"}`}>
+                {tier.popular && (
+                  <div className="bg-primary text-white text-xs font-bold text-center py-1.5 tracking-widest uppercase">Most Popular</div>
+                )}
+                <div className="grid md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-gray-100 bg-white">
+                  {/* Size */}
+                  <div className="p-6 flex items-center gap-3">
+                    <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                      </svg>
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-400 uppercase tracking-wide mb-0.5">School Size</div>
+                      <div className="font-bold text-primary text-sm">{tier.size}</div>
+                    </div>
+                  </div>
+                  {/* School only */}
+                  <div className="p-6 flex flex-col justify-between">
+                    <div className="md:hidden text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">School Plan</div>
+                    {tier.school ? (
+                      <div className="text-center">
+                        <span className="text-xs text-gray-400">NPR </span>
+                        <span className="text-3xl font-bold text-gray-700">{tier.school}</span>
+                        <span className="text-xs text-gray-400">/mo</span>
+                      </div>
+                    ) : (
+                      <div className="text-center text-lg font-bold text-gray-700">Contact Us</div>
+                    )}
+                    <a href="https://wa.me/9779761154213" target="_blank" rel="noopener noreferrer"
+                      className="mt-4 block text-center py-2 px-4 rounded-lg text-xs font-semibold border border-gray-300 text-gray-600 hover:border-primary hover:text-primary transition-colors">
+                      Get Started
+                    </a>
+                  </div>
+                  {/* School + HR */}
+                  <div className={`p-6 flex flex-col justify-between ${tier.popular ? "bg-primary/5" : ""}`}>
+                    <div className="md:hidden flex items-center gap-2 mb-2">
+                      <span className="text-xs font-semibold text-primary uppercase tracking-wide">School + HR Plan</span>
+                      <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-0.5 rounded-full">Recommended</span>
+                    </div>
+                    <div className="hidden md:flex justify-center mb-1">
+                      <span className="bg-green-100 text-green-700 text-xs font-bold px-2 py-0.5 rounded-full">Recommended</span>
+                    </div>
+                    {tier.hr ? (
+                      <div className="text-center">
+                        <span className="text-xs text-gray-400">NPR </span>
+                        <span className="text-3xl font-bold text-primary">{tier.hr}</span>
+                        <span className="text-xs text-gray-400">/mo</span>
+                      </div>
+                    ) : (
+                      <div className="text-center text-lg font-bold text-primary">Contact Us</div>
+                    )}
+                    <a href="https://wa.me/9779761154213" target="_blank" rel="noopener noreferrer"
+                      className="mt-4 block text-center py-2 px-4 rounded-lg text-xs font-semibold bg-primary text-white hover:bg-primary-dark transition-colors">
+                      Get Started
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* What each plan includes */}
+          <div className="mt-12 grid md:grid-cols-2 gap-6">
+            <div className="card p-6">
+              <h4 className="font-bold text-primary mb-4">School Plan includes</h4>
+              <ul className="space-y-2 text-sm text-gray-600">
+                {["Student & staff management","Daily attendance tracking","Marks & GPA calculation","Report card PDF generation","Fee collection & receipts","Homework & notices board","Mobile apps (staff & parents)","Bikram Sambat support"].map(f => (
+                  <li key={f} className="flex items-center gap-2">
+                    <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="card p-6 border-2 border-primary/30">
+              <h4 className="font-bold text-primary mb-1">School + HR Plan includes</h4>
+              <p className="text-xs text-gray-400 mb-4">Everything in School Plan, plus:</p>
+              <ul className="space-y-2 text-sm text-gray-600">
+                {["Mobile attendance clock-in/out for staff","Automatic payroll calculation","Payslip generation per employee","Leave request & approval","Geo-fencing (location-based clock-in)","HR reports & payroll export"].map(f => (
+                  <li key={f} className="flex items-center gap-2">
+                    <svg className="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <p className="text-center text-gray-400 text-sm mt-8">Annual billing available with 2 months free. All prices in Nepali Rupees (NPR).</p>
+        </div>
+      </section>
+
       <section className="py-24 px-6 bg-primary">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Modernize Your School?</h2>
