@@ -2,13 +2,131 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Attend Xpress — Contactless HR & Attendance Software | Zentara Labs",
-  description: "Attend Xpress replaces bulky fingerprint devices with contactless mobile clock-in and clock-out. Automatic payroll processing for admins and accountants.",
+  title: "Attend Xpress — Best Attendance & HR Software in Nepal",
+  description:
+    "Attend Xpress is an affordable mobile attendance & HR software for businesses in Nepal. QR clock-in, geo-fencing, automatic payroll and payslips — no fingerprint machine needed. A simple, low-cost alternative to traditional attendance systems.",
+  keywords: [
+    "attendance software Nepal",
+    "HR software Nepal",
+    "best attendance app Nepal",
+    "QR attendance Nepal",
+    "mobile attendance app Nepal",
+    "payroll software Nepal",
+    "fingerprint machine alternative Nepal",
+    "Hajir alternative",
+    "Attend Xpress",
+  ],
+  alternates: { canonical: "/products/attend-xpress" },
 };
+
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Attend Xpress",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Android, iOS, Web",
+  description:
+    "Mobile attendance and HR software for businesses in Nepal. QR clock-in, GPS geo-fencing, automatic payroll and payslips, leave management — no fingerprint hardware required.",
+  offers: {
+    "@type": "AggregateOffer",
+    lowPrice: "0",
+    highPrice: "149",
+    priceCurrency: "NPR",
+    offerCount: "3",
+    description: "Free plan available. Paid plans NPR 99 (Standard) and NPR 149 (Professional) per employee per month. No setup fee.",
+  },
+  provider: {
+    "@type": "Organization",
+    name: "Zentara Labs",
+    url: "https://zentaralabs.com",
+    areaServed: "NP",
+  },
+};
+
+const faqs = [
+  {
+    q: "Is Attend Xpress a good alternative to a fingerprint attendance machine?",
+    a: "Yes. Attend Xpress replaces the fingerprint machine entirely. Staff clock in with a QR scan from their own phone, so there is no device to buy, no maintenance, and no morning queue.",
+  },
+  {
+    q: "How does Attend Xpress prevent employees clocking in from home?",
+    a: "GPS geo-fencing ensures a clock-in only counts when the employee is physically inside the approved work location, which stops attendance from being marked from home or elsewhere.",
+  },
+  {
+    q: "Does it calculate payroll automatically?",
+    a: "Yes. Attend Xpress calculates payroll from attendance, overtime and leave, and generates payslips. Reports export to PDF or Excel for your accountant.",
+  },
+  {
+    q: "How much does Attend Xpress cost?",
+    a: "There is a free plan for small teams. Paid plans are NPR 99 per employee per month (Standard) and NPR 149 (Professional, with automatic payroll and multi-site). No setup fee, no hardware cost, and annual billing includes two months free.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
+const pricingTiers = [
+  {
+    name: "Free",
+    forWho: "Small shops & teams",
+    price: "0",
+    priceLabel: "Free forever",
+    highlight: false,
+    cta: "Start Free",
+    features: [
+      "Mobile QR clock-in & clock-out",
+      "Staff roster & shifts",
+      "Present / absent tracking",
+      "Unlimited employees",
+      "30-day attendance history",
+    ],
+  },
+  {
+    name: "Standard",
+    forWho: "Growing businesses",
+    price: "99",
+    priceLabel: "per employee / month",
+    highlight: true,
+    cta: "Get Started",
+    features: [
+      "Everything in Free",
+      "GPS geo-fencing (verified attendance)",
+      "Leave management",
+      "Reports & export (PDF / Excel)",
+      "Unlimited history",
+      "Priority support",
+    ],
+  },
+  {
+    name: "Professional",
+    forWho: "Multi-site & payroll",
+    price: "149",
+    priceLabel: "per employee / month",
+    highlight: false,
+    cta: "Get Started",
+    features: [
+      "Everything in Standard",
+      "Automatic payroll & payslips",
+      "SSF / CIT / TDS / PF support",
+      "Multi-site & branches",
+      "Field-staff tracking",
+      "Dedicated account support",
+    ],
+  },
+];
 
 export default function AttendXpress() {
   return (
     <div className="min-h-screen bg-surface">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 shadow-sm">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
@@ -117,64 +235,56 @@ export default function AttendXpress() {
               Pay only for your team size. No contracts, no setup fees, no hardware costs.
             </p>
           </div>
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
-            {/* Schools - Free */}
-            <div className="card p-10 border-2 border-green-300 bg-green-50/50 flex flex-col">
-              <div className="inline-block px-3 py-1 bg-green-100 text-green-700 text-xs font-bold rounded-full mb-4 w-fit">For Schools</div>
-              <div className="text-4xl font-bold text-green-700 mb-1">FREE</div>
-              <div className="text-sm text-gray-500 mb-6">Included with any School Management plan</div>
-              <ul className="space-y-3 text-sm text-gray-600 flex-1 mb-8">
-                {[
-                  "Mobile attendance for all staff",
-                  "Automatic payroll calculation",
-                  "Payslip generation",
-                  "Leave management",
-                  "Geo-fencing clock-in",
-                  "Attendance reports & export",
-                ].map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a href="/products/school-management" className="block text-center py-2.5 px-4 rounded-lg font-semibold text-sm border border-green-600 text-green-700 hover:bg-green-600 hover:text-white transition-colors">
-                See School Plans →
-              </a>
-            </div>
-            {/* Other Organizations */}
-            <div className="card p-10 border-2 border-primary shadow-xl flex flex-col">
-              <div className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold rounded-full mb-4 w-fit">For Businesses & Organizations</div>
-              <div className="mb-1">
-                <span className="text-sm text-gray-500">NPR </span>
-                <span className="text-4xl font-bold text-primary">200</span>
-                <span className="text-gray-400 text-sm"> / employee / month</span>
+          <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch">
+            {pricingTiers.map((t) => (
+              <div key={t.name} className={`card p-8 flex flex-col relative ${t.highlight ? "border-2 border-primary shadow-xl" : "border border-gray-200"}`}>
+                {t.highlight && (
+                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 bg-primary text-white text-xs font-semibold rounded-full">Most Popular</span>
+                )}
+                <h3 className="text-xl font-bold text-primary mb-1">{t.name}</h3>
+                <p className="text-xs text-gray-500 mb-4">{t.forWho}</p>
+                <div className="mb-6">
+                  {t.price === "0" ? (
+                    <span className="text-4xl font-bold text-primary">Free</span>
+                  ) : (
+                    <span>
+                      <span className="text-sm text-gray-500">NPR </span>
+                      <span className="text-4xl font-bold text-primary">{t.price}</span>
+                    </span>
+                  )}
+                  <div className="text-xs text-gray-400 mt-1">{t.priceLabel}</div>
+                </div>
+                <ul className="space-y-2 text-sm text-gray-600 flex-1 mb-6">
+                  {t.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2">
+                      <svg className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <a href="https://wa.me/9779761154213" target="_blank" rel="noopener noreferrer" className={`block text-center py-2.5 px-4 rounded-lg font-semibold text-sm transition-colors ${t.highlight ? "bg-primary text-white hover:bg-primary-dark" : "border border-primary text-primary hover:bg-primary hover:text-white"}`}>{t.cta}</a>
               </div>
-              <div className="text-sm text-gray-500 mb-6">Scales with your team. Pay only for active employees.</div>
-              <ul className="space-y-3 text-sm text-gray-600 flex-1 mb-8">
-                {[
-                  "Mobile attendance for all staff",
-                  "Automatic payroll calculation",
-                  "Payslip generation",
-                  "Leave management",
-                  "Geo-fencing clock-in",
-                  "Attendance reports & export",
-                  "Admin & accountant dashboard",
-                  "Dedicated support",
-                ].map((f) => (
-                  <li key={f} className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg>
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <a href="https://wa.me/9779761154213" target="_blank" rel="noopener noreferrer" className="block text-center py-2.5 px-4 rounded-lg font-semibold text-sm bg-primary text-white hover:bg-primary-dark transition-colors">
-                Get Started
-              </a>
-            </div>
+            ))}
           </div>
           <div className="text-center mt-8">
             <p className="text-gray-400 text-sm">Annual billing available with 2 months free. All prices in Nepali Rupees (NPR).</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-4 tracking-wide uppercase">FAQ</span>
+            <h2 className="text-4xl font-bold text-primary mb-4">Frequently Asked Questions</h2>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((f) => (
+              <div key={f.q} className="card p-6">
+                <h3 className="font-bold text-primary mb-2">{f.q}</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{f.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
