@@ -104,6 +104,7 @@ export default function Home() {
             <a href="#pricing" className="text-sm text-gray-600 hover:text-primary transition-colors">Pricing</a>
             <a href="#faq" className="text-sm text-gray-600 hover:text-primary transition-colors">FAQ</a>
             <a href="#about" className="text-sm text-gray-600 hover:text-primary transition-colors">About</a>
+            <Link href="/blog" className="text-sm text-gray-600 hover:text-primary transition-colors">Blog</Link>
             <a href="#contact" className="text-sm text-gray-600 hover:text-primary transition-colors">Contact</a>
           </div>
           <a href="#contact" className="btn-primary text-sm px-4 py-2">Get in Touch</a>
@@ -378,6 +379,7 @@ export default function Home() {
             <Link href="/products/attend-xpress" className="hover:text-white transition-colors">Attend Xpress</Link>
             <a href="#pricing" className="hover:text-white transition-colors">Pricing</a>
             <a href="#faq" className="hover:text-white transition-colors">FAQ</a>
+            <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
             <a href="#contact" className="hover:text-white transition-colors">Contact</a>
           </div>
           <div className="text-sm text-white/50">© {new Date().getFullYear()} Zentara Labs. All rights reserved.</div>

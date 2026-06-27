@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   creator: "Zentara Labs",
   publisher: "Zentara Labs",
   alternates: { canonical: "/" },
+  verification: { google: "Po55SOPbcSJe1IshWGzcV4dKS_swpJ3z5Jz-5MnZXEw" },
   openGraph: {
     type: "website",
     locale: "en_NP",
